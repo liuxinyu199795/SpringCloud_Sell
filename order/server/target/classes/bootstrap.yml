@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+    stream:
+      bindings:
+        input:
+         destination: myMessage
+        output:
+         destination: myMessage
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
